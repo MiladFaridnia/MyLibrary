@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/booksFragment"
-        android:name="com.gapfilm.mylibrary.ui.books.BooksFragment"
+        android:name="com.faridnia.mylibrary.ui.books.BooksFragment"
         android:label="books_fragment"
         tools:layout="@layout/books_fragment" />
 </navigation>

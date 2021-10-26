@@ -1,9 +1,11 @@
-package com.gapfilm.mylibrary.ui
+package com.faridnia.mylibrary.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.gapfilm.mylibrary.R
+import com.faridnia.mylibrary.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
