@@ -1,4 +1,4 @@
-package com.gapfilm.mylibrary
+package com.faridnia.mylibrary
 
 import org.junit.Test
 

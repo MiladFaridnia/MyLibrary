@@ -1,4 +1,4 @@
-package com.gapfilm.mylibrary.data
+package com.faridnia.mylibrary.data
 
 
 import kotlinx.android.parcel.Parcelize
