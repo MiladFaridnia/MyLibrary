@@ -9,5 +9,20 @@
         android:id="@+id/booksFragment"
         android:name="com.faridnia.mylibrary.ui.books.BooksFragment"
         android:label="books_fragment"
-        tools:layout="@layout/books_fragment" />
+        tools:layout="@layout/books_fragment" >
+        <action
+            android:id="@+id/action_booksFragment_to_addEditBooksFragment"
+            app:destination="@id/addEditBooksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditBooksFragment"
+        android:name="com.faridnia.mylibrary.ui.addEditBooks.AddEditBooksFragment"
+        android:label="add_edit_book_fragment"
+        tools:layout="@layout/add_edit_book_fragment" >
+        <argument
+            android:name="book"
+            app:argType="com.faridnia.mylibrary.data.BooksItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

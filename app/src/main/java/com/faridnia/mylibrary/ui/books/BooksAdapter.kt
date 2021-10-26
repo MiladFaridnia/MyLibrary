@@ -8,10 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.faridnia.mylibrary.data.BooksItem
 import com.faridnia.mylibrary.databinding.BookListItemBinding
 
-class BooksAdapter : ListAdapter<BooksItem, BooksAdapter.BooksViewHolder>(DiffUtilCallback()) {
+class BooksAdapter(private val listener: OnBookClicked) :
+    ListAdapter<BooksItem, BooksAdapter.BooksViewHolder>(DiffUtilCallback()) {
 
-    class BooksViewHolder(private val binding: BookListItemBinding) :
+    inner class BooksViewHolder(private val binding: BookListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    listener.onBookItemClicked(getItem(adapterPosition))
+                }
+            }
+        }
 
         fun bind(booksItem: BooksItem) {
             binding.apply {
@@ -40,6 +49,10 @@ class BooksAdapter : ListAdapter<BooksItem, BooksAdapter.BooksViewHolder>(DiffUt
     override fun onBindViewHolder(holder: BooksViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
+    }
+
+    interface OnBookClicked {
+        fun onBookItemClicked(booksItem: BooksItem)
     }
 
 }
